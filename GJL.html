@@ -1,0 +1,181 @@
+<html>
+    <head>
+            <title>VALHLALLA - BARBER SHOP</title>
+            <meta charset="UTF-8">
+            <meta name="author" content="Luca Sorace">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+    #container{
+        height: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+    }
+
+    div .container{
+        display: grid;
+    }
+
+#logo{
+    position : relative;
+    max-width: 500px;
+}
+
+div .List{
+    position: fixed;
+    top: 50%;
+}
+
+th{
+    font-size : 30px;
+    font-family: sans-serif;
+    padding: 15px;
+  text-align: center;
+}
+
+table .List, th, td{
+    border: 1px solid black;
+  border-collapse: collapse;
+}
+#aliveJudgment{
+    background-color : green; 
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    font-family: monospace;
+}
+#deadJudgment{
+    background-color: red;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    font-family: monospace;
+}
+ 
+ .Score{
+     position:fixed;
+     display: inline-table;
+        margin-left:1em;
+}
+.result{
+    margin-top: 8em;
+    margin-left:7%;
+}
+
+    </style>
+    <body>
+        <div id = "container">
+                <img id = "logo" src = "GJL-Logo.png" alt ="GJL logo">
+        <table class="List">
+            <div class ="thList">
+                  <th> Name </th>
+                <th> Surname </th> 
+                <th> Age </th>
+                <th> Judgment </th>
+            </div>
+        <tr>
+            <td colspan="4">  <!-- ONLY ONE CELL, TAKE 4 COLUMNS-->
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Mario</td>
+            <td>Rossi</td>
+            <td>Centuries</td>
+            <td><input type="button" onclick ="aliveJd()" value="ALIVE" id="aliveJudgment1"/> 
+                <input type="button" value="KILL" id="deadJudgment1"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Ash</td>
+            <td>Ketchum</td>
+            <td>Still 12</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment2"/> 
+                <input type="button" value="KILL" id="deadJudgment2"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Peter</td>
+            <td>Pan</td>
+            <td>Forever young</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment3"/> 
+                <input type="button" value="KILL" id="deadJudgment3"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Your mother-in-law</td>
+            <td>Surname of your wife</td>
+            <td>older than you</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment4"/> 
+                <input type="button" value="KILL" id="deadJudgment4"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Vlad III</td>
+            <td>Valacchia</td>
+            <td>Immortal</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment5"/> 
+                <input type="button" value="KILL" id="deadJudgment5"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Bigfoot</td>
+            <td>Bigfoot</td>
+            <td>500</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment6"/> 
+                <input type="button" value="KILL" id="deadJudgment6"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>The one better than you</td>
+            <td>Don't care about it</td>
+            <td>Don't care about it too</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment7"/> 
+                <input type="button" value="KILL" id="deadJudgment7"/>
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Chtulhu</td>
+            <td>Lovecraft</td>
+            <td>Immortal</td>
+            <td><input type="button" value="ALIVE" id="aliveJudgment8"/> 
+                <input type="button" value="KILL" id="deadJudgment8"/>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<table class= "Score" >
+        <th>Alive</th>
+        <th>Dead</th> 
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <div class ="numberInfo">
+            <td><input type="number" value="0" id="aliveScore"/></td>
+            <td><input type="number" value="0" id="deadScore"/></td>
+        </div>
+        </tr>
+</table>
+
+<div class="result">
+     <input type="button" value="Are u a good God?" id="finalScore"/>
+<h2>U are a good god!</h2>
+<h2>How bad!</h2>
+</div>
+
+<script>
+    var alivePeople;
+    var deadPeople;
+function killJd(){
+
+
+}
+
+</script>
+    </body>
+
+</html>
