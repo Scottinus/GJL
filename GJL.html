@@ -39,7 +39,7 @@ table .List, th, td{
     border: 1px solid black;
   border-collapse: collapse;
 }
-.aliveJudgment{
+#aliveJudgment{
     background-color : green; 
     margin-left: 10px;
     padding-right: 20px;
@@ -48,7 +48,7 @@ table .List, th, td{
     font-size: 1.5em;
     font-family: monospace;
 }
-.deadJudgment{
+#deadJudgment{
     background-color: red;
     margin-left: 10px;
     padding-right: 20px;
@@ -87,64 +87,64 @@ table .List, th, td{
             <td>Mario</td>
             <td>Rossi</td>
             <td>Centuries</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>Ash</td>
             <td>Ketchum</td>
             <td>Still 12</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>Peter</td>
             <td>Pan</td>
             <td>Forever young</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>Your mother-in-law</td>
             <td>Surname of your wife</td>
             <td>older than you</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>Vlad III</td>
             <td>Valacchia</td>
             <td>Immortal</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>Bigfoot</td>
             <td>Bigfoot</td>
             <td>500</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>The one better than you</td>
             <td>Don't care about it</td>
             <td>Don't care about it too</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/>
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
         <tr> <!-- SECOND ROW => 7 8 9 + -->
             <td>Chtulhu</td>
             <td>Lovecraft</td>
             <td>Immortal</td>
-            <td><input type="button" value="ALIVE" class="aliveJudgment"/> 
-                <input type="button" value="KILL" class="deadJudgment"/>
+            <td><input type="button" value="ALIVE" onclick="aliveScore(this)" id="aliveJudgment"/> 
+                <input type="button" value="KILL" onclick="deadScore(this)" id="deadJudgment"/>
             </td>
         </tr>
     </table>
@@ -168,18 +168,19 @@ table .List, th, td{
 </div>
 
 <script>
-       window.onload = function() {
-                //var numericButtons = document.getElementsByClassName("numericButton");
-                var killButtons = document.querySelectorAll(".deadJudgment"); //gets all the numeric buttons
-                for(var i = 0; i< killButtons.length; i++){ //cycle through the numeric buttons
-                    killButtons[i].addEventListener("click", addScore); //add event handler for click event
+              function deadScore(button){
+                     document.getElementById("deadScore").value ++;
+                     var cellPos =button.rowIndex;
+                     alert("row index is " + cellPos);
+                }
+            
+               
+                function aliveScore(button){
+
+                    document.getElementById("aliveScore").value ++;
                 }
 
-              function addScore(event){
-                     document.getElementById("deadScore").value += "1";
-                 
-                }
-
+            
 </script>
     </body>
 
