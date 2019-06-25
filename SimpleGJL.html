@@ -1,0 +1,188 @@
+<html>
+    <head>
+            <title>GJL - Are u a good god?</title>
+            <meta charset="UTF-8">
+            <meta name="author" content="Luca Sorace">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+    #container{
+        height: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+    }
+
+    div .container{
+        display: grid;
+    }
+
+#logo{
+    position : relative;
+    max-width: 500px;
+}
+
+div #List{
+    position: fixed;
+    top: 50%;
+}
+
+th{
+    font-size : 30px;
+    font-family: sans-serif;
+    padding: 15px;
+  text-align: center;
+}
+
+table #List, th, td{
+    border: 1px solid black;
+  border-collapse: collapse;
+}
+#aliveJudgment{
+    background-color : green; 
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    font-family: monospace;
+}
+#deadJudgment{
+    background-color: red;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    font-family: monospace;
+}
+ 
+ #Score{
+     position:fixed;
+     display: inline-table;
+        margin-left:1em;
+}
+.result{
+    margin-top: 8em;
+    margin-left:7%;
+}
+
+.Judge{
+    background-color:transparent;
+    margin-left: 5.5em;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-family: monospace;
+}
+#nameMario{
+    background-color : red;
+    font-size: 30px;
+
+    font-family: monospace;
+}
+
+h3{
+    padding: 1px solid black;
+    margin-left:6em;
+    margin-top:3em;
+}
+
+    </style>
+    <body>
+        <div id = "container">
+                <img id = "logo" src = "GJL-Logo.png" alt ="GJL logo">
+        <table id="List">
+            <div class ="thList">
+                  <th> Name </th>
+                <th> Surname </th> 
+                <th> Age </th>
+            </div>
+        <tr>
+            <td colspan="4">  <!-- ONLY ONE CELL, TAKE 4 COLUMNS-->
+            </td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Mario</td>
+            <td>Rossi</td>
+            <td>Centuries</td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Ash</td>
+            <td>Ketchum</td>
+            <td>Still 12</td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Peter</td>
+            <td>Pan</td>
+            <td>Forever young</td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Your mother-in-law</td>
+            <td>Surname of your wife</td>
+            <td>older than you</td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Vlad III</td>
+            <td>Valacchia</td>
+            <td>Immortal</td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Bigfoot</td>
+            <td>Bigfoot</td>
+            <td>500</td>
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>The one better than you</td>
+            <td>Don't care about it</td>
+            <td>Don't care about it too</td>
+
+        </tr>
+        <tr> <!-- SECOND ROW => 7 8 9 + -->
+            <td>Chtulhu</td>
+            <td>Lovecraft</td>
+            <td>Immortal</td>
+
+        </tr>
+    </table>
+
+</div>
+<h2>Does Mario made good actions? judge him!</h2>
+
+<table id = "Judgement" class ="Judge">
+         <tr> 
+             <td><input type="button" value="Judge Mario" onclick="nameOf(this)" class = "scoreList" id="nameMario"/></td>
+             </tr>
+</table>
+
+<h3 id = "text">Mario is alive!</h3>
+
+<script>
+          function nameOf (button){
+             var x = button.value;
+             var table = document.getElementById("List");
+  if( x ==  "Judge Mario") { document.getElementById("List").deleteRow(2);        
+                       button.value = "Resurrect Mario";  
+                       button.style.backgroundColor = "green";
+                       var text = document.getElementById("text").innerHTML ="Mario is gone, he was really bad"; 
+            }else
+                  if(x == "Resurrect Mario"){
+                     var row = table.insertRow(2);
+                     var cell1 = row.insertCell(0);
+                     var cell2 = row.insertCell(1);
+                     var cell3 = row.insertCell(2);
+                     cell1.innerHTML = "Mario";
+                     cell2.innerHTML = "Rossi";
+                     cell3.innerHTML = "Centuries";
+                     button.value = "Judge Mario";
+                     button.style.backgroundColor = "red";
+                     var text = document.getElementById("text").innerHTML ="Mario is alive.<br> But Mario has not still learned the lesson!"; 
+                  }
+
+          }
+            
+</script>
+    </body>
+
+</html>
